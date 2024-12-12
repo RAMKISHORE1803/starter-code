@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 // Distinctive modern font for headlines with unique technical character
 const sora = Sora({
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${sora.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
