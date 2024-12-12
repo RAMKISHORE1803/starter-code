@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import {
   Code,
@@ -30,10 +29,7 @@ import {
 } from "@/components/ui/dialog";
 import demo from "./assets/Screenshot 2024-12-12 at 2.38.44 PM.png";
 import Image from "next/image";
-
-interface AuthToggleProps {
-  auth: string;
-}
+import CreativeFooter from "@/components/Footer";
 
 interface Framework {
   name: string;
@@ -175,7 +171,7 @@ const LandingPage = () => {
       </section>
 
       {/* Features Bento Grid Section */}
-      <section className="py-24 px-6 bg-black relative overflow-hidden">
+      <section className="py-24 px-6 ">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-purple-900/20" />
         
         <div className="max-w-6xl mx-auto relative">
@@ -487,7 +483,7 @@ const LandingPage = () => {
       </section>
 
       {/* Stack Builder Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-gray-900 to-black">
+      <section className="py-32 px-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             Build your dream stack.
@@ -871,53 +867,6 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* GitHub Integration */}
-          <div className="mb-16">
-            <h3 className="text-xl font-semibold mb-6 text-center">
-              GitHub Integration
-            </h3>
-            <div className="bg-gray-900 rounded-xl p-6 border-2 border-gray-800">
-              <div className="flex flex-col md:flex-row items-center gap-6">
-                <div className="flex-1">
-                  <h4 className="font-semibold mb-2">
-                    One-Click Repository Setup
-                  </h4>
-                  <p className="text-gray-400 text-sm mb-4">
-                    We'll create a new repository, set up GitHub Actions for
-                    CI/CD, and push your initial commit with a detailed README.
-                  </p>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-                    <Github className="w-5 h-5" />
-                    Connect GitHub
-                  </button>
-                </div>
-                <div className="flex-1">
-                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm text-gray-300">
-                    {`name: CI/CD Pipeline
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-      - run: npm ci
-      - run: npm test`}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Generate Button */}
           <div className="flex justify-center">
             <button
@@ -976,131 +925,7 @@ jobs:
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div>
-              <h3 className="font-semibold mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Documentation
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Careers
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Community
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Support
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Legal</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Terms
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Security
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-            © 2024 Project Generator. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <CreativeFooter/>
 
       {/* Waitlist Modal */}
       <Dialog open={showWaitlistModal} onOpenChange={setShowWaitlistModal}>
